@@ -1,26 +1,29 @@
 <?php
     include 'price.php';
 
+    $cart = [];
+    if (isset($_COOKIE['cart']) && $_COOKIE['cart'] !== '') {
+        $items = explode(',', $_COOKIE['cart']);
+        foreach ($items as $item) {
+            [$id, $quantity] = explode(':', $item);
+            $cart[$id] = (int)$quantity;
+        }
+    }
+
     if (isset($_GET['id'])) {
         $productId = $_GET['id'];
-        $cart = [];
 
-        if (isset($_COOKIE['cart']) && $_COOKIE['cart'] !== '') {
-            $cart = explode(',', $_COOKIE['cart']);
-        }
-
-        $alreadyAdded = false;
-        foreach ($cart as $item) {
-            if ($item == $productId) {
-                $alreadyAdded = true;
-                break;
+        if (isset($products[$productId])) {
+            if (!isset($cart[$productId])) {
+                $cart[$productId] = 1;
             }
         }
-
-        if (!$alreadyAdded) {
-            $cart[] = $productId;
-            setcookie('cart', implode(',', $cart), time() + 30);
+            $newCart = [];
+        foreach ($cart as $id => $quantity) {
+            $newCart[] = "$id:$quantity";
         }
+        setcookie('cart', implode(',', $newCart), time() + 2000, '/');
+
         header('Location: index.php');
         exit;
     }
@@ -39,8 +42,12 @@
    <div>
 <?php foreach ($products as $id => $product): ?>
     <p><?= $product['name'] ?> - <?= $product['price'] ?> грн
+        <?php if (isset($cart[$id])): ?>
+        <span style="color: green;">В корзині</span>
+        <?php else: ?>
        <a href="?id=<?= $id ?>">Додати в кошик</a>
-    <?php endforeach; ?></p>
+    <?php endif; ?></p>
+       <?php endforeach ?>
    </div>
    <a href="cart.php">Перейти до кошика</a>
 </body>

@@ -5,20 +5,30 @@ include "price.php";
 $cart = [];
 
 if (isset($_COOKIE['cart']) && $_COOKIE['cart'] !== '') {
-    $cart = explode(',', $_COOKIE['cart']);
+    $items = explode(',', $_COOKIE['cart']);
+    foreach ($items as $item) {
+        [$id, $quantity] = explode(':', $item);
+        $cart[$id] = (int)$quantity;
+    }
 }
 
-if (isset($_GET['remove'])) {
-    $removeId = $_GET['remove'];
-    $newCart = [];
-
-    foreach ($cart as $item) {
-        if ($item !== $removeId) {
-            $newCart[] = $item;
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'], $_POST['id'])) {
+    $id = $_POST['id'];
+    if (isset($cart[$id])) {
+        if ($_POST['action'] == 'plus') {
+            $cart[$id] ++;
+        } elseif ($_POST['action'] == 'minus') {
+             $cart[$id] --;
+             if ($cart[$id] <= 0) {
+                 unset($cart[$id]);
+             }
         }
+        $newCart = [];
+        foreach ($cart as $pid => $quantity) {
+            $newCart[] = "$pid:$quantity";
+        }
+        setcookie('cart', implode(',', $newCart), time() + 2000, '/');
     }
-    $cart = $newCart;
-    setcookie('cart', implode(',', $cart), time() + 30);
     header('Location: cart.php');
     exit;
 }
@@ -40,13 +50,19 @@ if (isset($_GET['remove'])) {
       <div>
           <?php
           $total = 0;
-          foreach ($cart as $id):
+          foreach ($cart as $id => $quantity):
               if (isset($products[$id])):
                   $product = $products[$id];
-                  $total += $product['price']; ?>
+                  $summa = $product['price']*$quantity;
+                  $total += $summa; ?>
           <p>
-              <?= $product['name'] ?> - <?= $product['price'] ?> грн
-              <a href="?remove=<?= $id ?>">Видалити</a>
+              <?= $product['name'] ?> - <?= $product['price'] ?> грн *
+              <?= $quantity ?> = <?= $summa ?> грн
+              <form method="post">
+                  <input type="hidden" name="id" value="<?= $id ?>">
+                  <button type="submit" name="action" value="plus">+</button>
+                  <button type="submit" name="action" value="minus">-</button>
+              </form>
           </p>
           <?php endif; endforeach; ?>
       </div>

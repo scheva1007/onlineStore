@@ -14,9 +14,12 @@ if (isset($_COOKIE['cart']) && $_COOKIE['cart'] !== '') {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'], $_POST['id'])) {
     $id = $_POST['id'];
-    if (isset($cart[$id])) {
+    if (isset($cart[$id]) && isset($products[$id])) {
+        $quantity = $products[$id]['quantity'];
         if ($_POST['action'] == 'plus') {
-            $cart[$id] ++;
+            if ($cart[$id] < $quantity) {
+                $cart[$id]++;
+            }
         } elseif ($_POST['action'] == 'minus') {
              $cart[$id] --;
              if ($cart[$id] <= 0) {
@@ -58,6 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'], $_POST['id']
           <p>
               <?= $product['name'] ?> - <?= $product['price'] ?> грн *
               <?= $quantity ?> = <?= $summa ?> грн
+              макс: <?= $product['quantity'] ?>
               <form method="post">
                   <input type="hidden" name="id" value="<?= $id ?>">
                   <button type="submit" name="action" value="plus">+</button>

@@ -13,7 +13,7 @@
     if (isset($_GET['id'])) {
         $productId = $_GET['id'];
 
-        if (isset($products[$productId])) {
+        if (isset($products[$productId]) && $products[$productId]['quantity'] > 0) {
             if (!isset($cart[$productId])) {
                 $cart[$productId] = 1;
             }
@@ -42,7 +42,12 @@
    <div>
 <?php foreach ($products as $id => $product): ?>
     <p><?= $product['name'] ?> - <?= $product['price'] ?> грн
-        <?php if (isset($cart[$id])): ?>
+        <?php if ($product['quantity'] > 0): ?>
+            залишок: <?= $product['quantity'] ?>
+        <?php endif; ?>
+        <?php if ($product['quantity'] == 0): ?>
+        <span style="color: red">Немає в наявності</span>
+        <?php elseif (isset($cart[$id])): ?>
         <span style="color: green;">В корзині</span>
         <?php else: ?>
        <a href="?id=<?= $id ?>">Додати в кошик</a>

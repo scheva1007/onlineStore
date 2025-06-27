@@ -1,33 +1,36 @@
 <?php
-    include 'price.php';
+session_start();
+include 'users.php';
+include 'price.php';
 
-    $cart = [];
-    if (isset($_COOKIE['cart']) && $_COOKIE['cart'] !== '') {
-        $items = explode(',', $_COOKIE['cart']);
-        foreach ($items as $item) {
-            [$id, $quantity] = explode(':', $item);
-            $cart[$id] = (int)$quantity;
+$userId = $_SESSION['user_id'] ?? null;
+$cartKey = $userId ? "cart_$userId" : 'cart_guest';
+
+$cart = [];
+
+if (isset($_COOKIE[$cartKey]) && $_COOKIE[$cartKey] !== '') {
+    $items = explode(',', $_COOKIE[$cartKey]);
+    foreach ($items as $item) {
+        [$id, $quantity] = explode(':', $item);
+        $cart[$id] = (int)$quantity;
+    }
+}
+
+if (isset($_GET['id'])) {
+    $productId = $_GET['id'];
+    if (isset($products[$productId]) && $products[$productId]['quantity'] > 0) {
+        if (!isset($cart[$productId])) {
+            $cart[$productId] = 1;
         }
     }
-
-    if (isset($_GET['id'])) {
-        $productId = $_GET['id'];
-
-        if (isset($products[$productId]) && $products[$productId]['quantity'] > 0) {
-            if (!isset($cart[$productId])) {
-                $cart[$productId] = 1;
-            }
-        }
-            $newCart = [];
-        foreach ($cart as $id => $quantity) {
-            $newCart[] = "$id:$quantity";
-        }
-        setcookie('cart', implode(',', $newCart), time() + 2000, '/');
-
-        header('Location: index.php');
-        exit;
+    $newCart = [];
+    foreach ($cart as $id => $quantity) {
+        $newCart[] = "$id:$quantity";
     }
-
+    setcookie($cartKey, implode(',', $newCart), time() + 2000, '/');
+    header('Location:index.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +41,11 @@
     <title>Інтернет-магазин</title>
 </head>
 <body>
-   <h3>Список товарів</h3>
+   <?php if ($userId): ?>
+   <p>Вітаємо, <?= $users[$userId]['login'] ?> <a href="logout.php">Вийти</a> </p>
+   <?php else: ?> <a href="login.php">Увійти</a>
+   <?php endif; ?>
+   <h4>Список товарів</h4>
    <div>
 <?php foreach ($products as $id => $product): ?>
     <p><?= $product['name'] ?> - <?= $product['price'] ?> грн

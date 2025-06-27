@@ -1,12 +1,15 @@
 <?php
 
-include "price.php";
+session_start();
+include 'price.php';
 
+$userId = $_SESSION['user_id'] ?? '';
+$cartKey = $userId ? "cart_$userId" : 'cart_guest';
 $cart = [];
 
-if (isset($_COOKIE['cart']) && $_COOKIE['cart'] !== '') {
-    $items = explode(',', $_COOKIE['cart']);
-    foreach ($items as $item) {
+if (isset($_COOKIE[$cartKey]) && $_COOKIE[$cartKey] !== '') {
+    $items = explode(',', $_COOKIE[$cartKey]);
+    foreach ($items as $id => $item) {
         [$id, $quantity] = explode(':', $item);
         $cart[$id] = (int)$quantity;
     }
@@ -20,21 +23,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'], $_POST['id']
             if ($cart[$id] < $quantity) {
                 $cart[$id]++;
             }
-        } elseif ($_POST['action'] == 'minus') {
-             $cart[$id] --;
-             if ($cart[$id] <= 0) {
-                 unset($cart[$id]);
-             }
+            } elseif ($_POST['action'] == 'minus') {
+                $cart[$id] --;
+                if ($cart[$id] <= 0) {
+                    unset($cart[$id]);
+                }
+            }
+           $newCart = [];
+            foreach ($cart as $pid => $quatity) {
+                $newCart[] = "$pid:$quantity";
+            }
+            setcookie($cartKey, implode(',', $newCart), time() +2000, '/');
         }
-        $newCart = [];
-        foreach ($cart as $pid => $quantity) {
-            $newCart[] = "$pid:$quantity";
-        }
-        setcookie('cart', implode(',', $newCart), time() + 2000, '/');
+        header('Location:index.php');
+        exit;
     }
-    header('Location: cart.php');
-    exit;
-}
 
 ?>
 
@@ -51,9 +54,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'], $_POST['id']
       <p>Кошик порожній</p>
       <?php else: ?>
       <div>
-          <?php
-          $total = 0;
-          foreach ($cart as $id => $quantity):
+          <?php $total = 0; ?>
+         <?php foreach ($cart as $id => $quantity):
               if (isset($products[$id])):
                   $product = $products[$id];
                   $summa = $product['price']*$quantity;

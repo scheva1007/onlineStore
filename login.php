@@ -1,18 +1,18 @@
 <?php
+
 session_start();
-include 'users.php';
+include "users.php";
 
 $error = '';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $login = $_POST['login'] ?? '';
     $password = $_POST['password'] ?? '';
 
     foreach ($users as $id => $user) {
         if ($user['login'] == $login && $user['password'] == $password) {
             if (isset($_COOKIE['cart_guest']) && $_COOKIE['cart_guest'] !== '') {
-                setcookie("cart_$id", $_COOKIE['cart_guest'], time() + 2000, '/');
-                setcookie('cart_guest', '', time() - 2000, '/');
+                setcookie("cart_$id", $_COOKIE['cart_guest'], time() + 2000);
+                setcookie('cart_guest', '', time() - 2000);
             }
             $_SESSION['user_id'] = $id;
             header('Location:index.php');
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $error = 'Невірний пароль або логін';
 }
-?>
+ ?>
 
 <!DOCTYPE html>
 <html lang="uk">

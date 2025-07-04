@@ -42,7 +42,10 @@ if (isset($_GET['id'])) {
 </head>
 <body>
    <?php if ($userId): ?>
-   <p>Вітаємо, <?= $users[$userId]['login'] ?> <a href="logout.php">Вийти</a> </p>
+   <p>
+       Вітаємо, <?= $users[$userId]['login'] ?> <a href="logout.php">Вийти</a>
+   </p>
+       <a href="purchaseHistory.php">Переглянути історію покупок</a>
    <?php else: ?> <a href="login.php">Увійти</a>
    <?php endif; ?>
    <h4>Список товарів</h4>

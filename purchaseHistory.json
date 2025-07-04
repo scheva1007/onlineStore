@@ -1,0 +1,53 @@
+[
+    {
+        "user_id": 1,
+        "date": "2025-07-04 13:33:33",
+        "items": [
+            {
+                "id": 1,
+                "name": "картопля",
+                "price": 50,
+                "quantity": 1
+            },
+            {
+                "id": 3,
+                "name": "банан",
+                "price": 70,
+                "quantity": 3
+            }
+        ],
+        "total": 260
+    },
+    {
+        "user_id": 2,
+        "date": "2025-07-04 14:42:42",
+        "items": [
+            {
+                "id": 3,
+                "name": "банан",
+                "price": 70,
+                "quantity": 2
+            },
+            {
+                "id": 5,
+                "name": "яблуко",
+                "price": 40,
+                "quantity": 1
+            }
+        ],
+        "total": 180
+    },
+    {
+        "user_id": 1,
+        "date": "2025-07-04 15:41:41",
+        "items": [
+            {
+                "id": 5,
+                "name": "яблуко",
+                "price": 40,
+                "quantity": 2
+            }
+        ],
+        "total": 80
+    }
+]

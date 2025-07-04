@@ -1,0 +1,32 @@
+{
+    "1": {
+        "name": "картопля",
+        "price": 50,
+        "quantity": 9
+    },
+    "2": {
+        "name": "помідор",
+        "price": 30,
+        "quantity": 11
+    },
+    "3": {
+        "name": "банан",
+        "price": 70,
+        "quantity": 10
+    },
+    "4": {
+        "name": "огірок",
+        "price": 60,
+        "quantity": 9
+    },
+    "5": {
+        "name": "яблуко",
+        "price": 40,
+        "quantity": 8
+    },
+    "6": {
+        "name": "апельсин",
+        "price": 55,
+        "quantity": 0
+    }
+}

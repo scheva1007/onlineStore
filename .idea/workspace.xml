@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf3d42ee-cf05-4b00-9ab0-3d1c4fd33437" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/purchaseHistory.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/purchaseHistory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/price.php" beforeDir="false" afterPath="$PROJECT_DIR$/price.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +54,12 @@
       <workItem from="1750743989566" duration="7878000" />
       <workItem from="1750830231398" duration="12997000" />
       <workItem from="1750917268251" duration="12715000" />
-      <workItem from="1751003244193" duration="595000" />
+      <workItem from="1751003244193" duration="649000" />
+      <workItem from="1751282110695" duration="5027000" />
+      <workItem from="1751349277835" duration="12180000" />
+      <workItem from="1751436599455" duration="8337000" />
+      <workItem from="1751522996327" duration="12177000" />
+      <workItem from="1751609211918" duration="9656000" />
     </task>
     <task id="LOCAL-00001" summary="made a main page with the ability to add products and a shopping cart with the ability to delete products">
       <created>1750597501897</created>
@@ -75,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1750764533574</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="made a login page">
+      <created>1751012745002</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1751012745002</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -85,17 +99,18 @@
     <MESSAGE value="made a main page with the ability to add products and a shopping cart with the ability to delete products" />
     <MESSAGE value="if the product is selected, then it shows in the basket. In the basket I added the quantity of the product and the +/- buttons" />
     <MESSAGE value="I added a display of the quantity of goods, made it so that it was impossible to select more goods than there are" />
-    <option name="LAST_COMMIT_MESSAGE" value="I added a display of the quantity of goods, made it so that it was impossible to select more goods than there are" />
+    <MESSAGE value="made a login page" />
+    <option name="LAST_COMMIT_MESSAGE" value="made a login page" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="55" y="3" key="CommitChangelistDialog2" timestamp="1750764532278">
+    <state x="55" y="3" key="CommitChangelistDialog2" timestamp="1751012743331">
       <screen x="0" y="0" width="1440" height="870" />
     </state>
-    <state x="55" y="3" key="CommitChangelistDialog2/0.0.1440.870@0.0.1440.870" timestamp="1750764532278" />
-    <state x="500" y="189" key="FileChooserDialogImpl" timestamp="1750248067851">
+    <state x="55" y="3" key="CommitChangelistDialog2/0.0.1440.870@0.0.1440.870" timestamp="1751012743331" />
+    <state x="500" y="189" key="FileChooserDialogImpl" timestamp="1751012780277">
       <screen x="0" y="0" width="1440" height="870" />
     </state>
-    <state x="500" y="189" key="FileChooserDialogImpl/0.0.1440.870@0.0.1440.870" timestamp="1750248067851" />
+    <state x="500" y="189" key="FileChooserDialogImpl/0.0.1440.870@0.0.1440.870" timestamp="1751012780277" />
     <state x="555" y="358" key="NewPhpFileDialog" timestamp="1750851352797">
       <screen x="0" y="0" width="1440" height="870" />
     </state>
@@ -104,9 +119,9 @@
       <screen x="0" y="0" width="1440" height="870" />
     </state>
     <state x="221" y="79" key="SettingsEditor/0.0.1440.870@0.0.1440.870" timestamp="1750247987526" />
-    <state x="312" y="167" key="Vcs.Push.Dialog.v2" timestamp="1750764540953">
+    <state x="312" y="167" key="Vcs.Push.Dialog.v2" timestamp="1751012752799">
       <screen x="0" y="0" width="1440" height="870" />
     </state>
-    <state x="312" y="167" key="Vcs.Push.Dialog.v2/0.0.1440.870@0.0.1440.870" timestamp="1750764540953" />
+    <state x="312" y="167" key="Vcs.Push.Dialog.v2/0.0.1440.870@0.0.1440.870" timestamp="1751012752799" />
   </component>
 </project>

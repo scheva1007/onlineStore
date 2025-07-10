@@ -1,9 +1,8 @@
 <?php
 
-$users = [
-    1 => ['login' => 'Alex', 'password' => '12345'],
-    2 => ['login' => 'Sem', 'password' => '23456'],
-    3 => ['login' => 'Marta', 'password' => '34567'],
-    4 => ['login' => 'Stella', 'password' => '45678'],
-    5 => ['login' => 'Bella', 'password' => '56789'],
-];
+$users = json_decode(file_get_contents('users.json'), true);
+
+if (!is_array($users)) {
+    echo "Помилка JSON: " . json_last_error_msg();
+    $users = [];
+}

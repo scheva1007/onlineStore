@@ -2,12 +2,12 @@
     "1": {
         "name": "картопля",
         "price": 50,
-        "quantity": 9
+        "quantity": 8
     },
     "2": {
         "name": "помідор",
         "price": 30,
-        "quantity": 11
+        "quantity": 9
     },
     "3": {
         "name": "банан",
@@ -17,7 +17,7 @@
     "4": {
         "name": "огірок",
         "price": 60,
-        "quantity": 9
+        "quantity": 8
     },
     "5": {
         "name": "яблуко",

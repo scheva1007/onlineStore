@@ -1,0 +1,27 @@
+{
+    "1": {
+        "login": "Alex",
+        "password": "12345",
+        "balance": 400
+    },
+    "2": {
+        "login": "Sem",
+        "password": "23456",
+        "balance": 20
+    },
+    "3": {
+        "login": "Marta",
+        "password": "34567",
+        "balance": 600
+    },
+    "4": {
+        "login": "Stella",
+        "password": "45678",
+        "balance": 100
+    },
+    "5": {
+        "login": "Bella",
+        "password": "56789",
+        "balance": 250
+    }
+}

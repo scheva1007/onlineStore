@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf3d42ee-cf05-4b00-9ab0-3d1c4fd33437" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/products.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purchaseHistory.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purchaseHistory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/price.php" beforeDir="false" afterPath="$PROJECT_DIR$/price.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/products.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/purchaseHistory.json" beforeDir="false" afterPath="$PROJECT_DIR$/purchaseHistory.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/users.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +31,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -59,7 +58,12 @@
       <workItem from="1751349277835" duration="12180000" />
       <workItem from="1751436599455" duration="8337000" />
       <workItem from="1751522996327" duration="12177000" />
-      <workItem from="1751609211918" duration="9656000" />
+      <workItem from="1751609211918" duration="9815000" />
+      <workItem from="1751876979807" duration="5119000" />
+      <workItem from="1751955640296" duration="10475000" />
+      <workItem from="1752041676284" duration="5726000" />
+      <workItem from="1752081080281" duration="776000" />
+      <workItem from="1752129500717" duration="1621000" />
     </task>
     <task id="LOCAL-00001" summary="made a main page with the ability to add products and a shopping cart with the ability to delete products">
       <created>1750597501897</created>
@@ -89,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1751012745002</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="made a file and a page &quot;purchase history&quot;">
+      <created>1751635153071</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1751635153071</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,13 +111,14 @@
     <MESSAGE value="if the product is selected, then it shows in the basket. In the basket I added the quantity of the product and the +/- buttons" />
     <MESSAGE value="I added a display of the quantity of goods, made it so that it was impossible to select more goods than there are" />
     <MESSAGE value="made a login page" />
-    <option name="LAST_COMMIT_MESSAGE" value="made a login page" />
+    <MESSAGE value="made a file and a page &quot;purchase history&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="made a file and a page &quot;purchase history&quot;" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="55" y="3" key="CommitChangelistDialog2" timestamp="1751012743331">
+    <state x="55" y="3" key="CommitChangelistDialog2" timestamp="1751635152079">
       <screen x="0" y="0" width="1440" height="870" />
     </state>
-    <state x="55" y="3" key="CommitChangelistDialog2/0.0.1440.870@0.0.1440.870" timestamp="1751012743331" />
+    <state x="55" y="3" key="CommitChangelistDialog2/0.0.1440.870@0.0.1440.870" timestamp="1751635152079" />
     <state x="500" y="189" key="FileChooserDialogImpl" timestamp="1751012780277">
       <screen x="0" y="0" width="1440" height="870" />
     </state>
@@ -115,13 +127,13 @@
       <screen x="0" y="0" width="1440" height="870" />
     </state>
     <state x="555" y="358" key="NewPhpFileDialog/0.0.1440.870@0.0.1440.870" timestamp="1750851352797" />
-    <state x="221" y="79" key="SettingsEditor" timestamp="1750247987526">
+    <state x="221" y="79" key="SettingsEditor" timestamp="1752081161693">
       <screen x="0" y="0" width="1440" height="870" />
     </state>
-    <state x="221" y="79" key="SettingsEditor/0.0.1440.870@0.0.1440.870" timestamp="1750247987526" />
-    <state x="312" y="167" key="Vcs.Push.Dialog.v2" timestamp="1751012752799">
+    <state x="221" y="79" key="SettingsEditor/0.0.1440.870@0.0.1440.870" timestamp="1752081161693" />
+    <state x="312" y="167" key="Vcs.Push.Dialog.v2" timestamp="1751635240346">
       <screen x="0" y="0" width="1440" height="870" />
     </state>
-    <state x="312" y="167" key="Vcs.Push.Dialog.v2/0.0.1440.870@0.0.1440.870" timestamp="1751012752799" />
+    <state x="312" y="167" key="Vcs.Push.Dialog.v2/0.0.1440.870@0.0.1440.870" timestamp="1751635240346" />
   </component>
 </project>

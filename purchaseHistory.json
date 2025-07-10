@@ -49,5 +49,50 @@
             }
         ],
         "total": 80
+    },
+    {
+        "user_id": 2,
+        "date": "2025-07-09 14:11:44",
+        "items": [
+            {
+                "id": 2,
+                "name": "помідор",
+                "price": 30,
+                "quantity": 1
+            },
+            {
+                "id": 4,
+                "name": "огірок",
+                "price": 60,
+                "quantity": 1
+            }
+        ],
+        "total": 90
+    },
+    {
+        "user_id": 2,
+        "date": "2025-07-09 14:22:24",
+        "items": [
+            {
+                "id": 1,
+                "name": "картопля",
+                "price": 50,
+                "quantity": 1
+            }
+        ],
+        "total": 50
+    },
+    {
+        "user_id": 2,
+        "date": "2025-07-10 13:08:02",
+        "items": [
+            {
+                "id": 2,
+                "name": "помідор",
+                "price": 30,
+                "quantity": 1
+            }
+        ],
+        "total": 30
     }
 ]

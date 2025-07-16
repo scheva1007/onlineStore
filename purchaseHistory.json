@@ -94,5 +94,75 @@
             }
         ],
         "total": 30
+    },
+    {
+        "user_id": 1,
+        "date": "2025-07-14 15:47:37",
+        "items": [
+            {
+                "id": 3,
+                "name": "банан",
+                "price": 70,
+                "quantity": "1"
+            },
+            {
+                "id": 4,
+                "name": "огірок",
+                "price": 60,
+                "quantity": "1"
+            }
+        ],
+        "total": 130
+    },
+    {
+        "user_id": 1,
+        "date": "2025-07-15 15:00:11",
+        "items": [
+            {
+                "id": 5,
+                "name": "яблуко",
+                "price": 40,
+                "quantity": "1"
+            },
+            {
+                "id": 1,
+                "name": "картопля",
+                "price": 50,
+                "quantity": "1"
+            }
+        ],
+        "total": 90
+    },
+    {
+        "user_id": 1,
+        "date": "2025-07-15 15:00:27",
+        "items": [],
+        "total": 0
+    },
+    {
+        "user_id": 1,
+        "date": "2025-07-15 15:37:41",
+        "items": [
+            {
+                "id": 2,
+                "name": "помідор",
+                "price": 30,
+                "quantity": "1"
+            }
+        ],
+        "total": 30
+    },
+    {
+        "user_id": 1,
+        "date": "2025-07-16 15:05:28",
+        "items": [
+            {
+                "id": 3,
+                "name": "банан",
+                "price": 70,
+                "quantity": "1"
+            }
+        ],
+        "total": 70
     }
 ]

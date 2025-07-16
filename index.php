@@ -5,32 +5,57 @@ include 'price.php';
 
 $userId = $_SESSION['user_id'] ?? null;
 $cartKey = $userId ? "cart_$userId" : 'cart_guest';
+$products = products();
+$cart = cartCookie($cartKey);
 
-$cart = [];
+$cart = addCart($cart, $cartKey, $products);
 
-if (isset($_COOKIE[$cartKey]) && $_COOKIE[$cartKey] !== '') {
-    $items = explode(',', $_COOKIE[$cartKey]);
-    foreach ($items as $item) {
-        [$id, $quantity] = explode(':', $item);
-        $cart[$id] = (int)$quantity;
-    }
-}
-
-if (isset($_GET['id'])) {
-    $productId = $_GET['id'];
-    if (isset($products[$productId]) && $products[$productId]['quantity'] > 0) {
-        if (!isset($cart[$productId])) {
-            $cart[$productId] = 1;
+function cartCookie($cartKey)
+{
+    $cart = [];
+    if (isset($_COOKIE[$cartKey])) {
+        $items = explode(',', $_COOKIE[$cartKey]);
+        foreach ($items as $item) {
+            $array = explode(':', $item);
+            if (count($array) == 2) {
+                $id = $array[0];
+                $quantity = $array[1];
+                $cart[$id] = $quantity;
+            }
         }
     }
+
+    return $cart;
+}
+
+function saveCartCookie($cart, $cartKey) {
     $newCart = [];
     foreach ($cart as $id => $quantity) {
         $newCart[] = "$id:$quantity";
     }
     setcookie($cartKey, implode(',', $newCart), time() + 2000, '/');
-    header('Location:index.php');
-    exit;
 }
+
+function addCart($cart, $cartKey, $products) {
+    if (isset($_GET['id'])) {
+        $productId = $_GET['id'];
+        if (isset($products[$productId]) && $products[$productId]['quantity'] > 0) {
+            if (!isset($cart[$productId])) {
+                $cart[$productId] = 1;
+            }
+            saveCartCookie($cart, $cartKey);
+        }
+        header('Location:index.php');
+        exit;
+    }
+
+    return $cart;
+}
+
+function products() {
+    return json_decode(file_get_contents('products.json'), true);
+}
+
 ?>
 
 <!DOCTYPE html>

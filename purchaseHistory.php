@@ -26,6 +26,7 @@ if (file_exists($historyFile)) {
     <title>Історія покупок</title>
 </head>
 <body>
+<a href="index.php">На головну</a>
     <h3>Історія моїх покупок</h3>
     <?php if (empty($history)): ?>
     <p>Ви ще нічого не купили</p>
@@ -42,7 +43,6 @@ if (file_exists($historyFile)) {
     </div>
     <?php endforeach; ?>
     <?php endif; ?>
-    <a href="index.php">На головну</a>
 </body>
 </html>
 

@@ -2,17 +2,18 @@
     "1": {
         "login": "Alex",
         "password": "12345",
-        "balance": 400
+        "balance": 80
     },
     "2": {
         "login": "Sem",
         "password": "23456",
-        "balance": 20
+        "balance": 200
     },
     "3": {
         "login": "Marta",
         "password": "34567",
-        "balance": 600
+        "balance": 600,
+        "quantity": -1
     },
     "4": {
         "login": "Stella",
